@@ -27,6 +27,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         app.hillforts.add(hillfort.copy())
         info("add Button Pressed: $hillfortTitle")
         app.hillforts.forEach{info("add Button Pressed: ${it.title}")}
+        setResult(AppCompatActivity.RESULT_OK)
       }
       else {
         toast ("Please Enter a title")
