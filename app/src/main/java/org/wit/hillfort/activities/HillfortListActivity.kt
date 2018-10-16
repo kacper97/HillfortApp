@@ -6,6 +6,7 @@ import org.wit.hillfort.R
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
@@ -25,6 +26,14 @@ class HillfortListActivity : AppCompatActivity() {
     val layoutManager=LinearLayoutManager(this)
     recyclerView.layoutManager=layoutManager
     recyclerView.adapter=HillfortAdapter(app.hillforts)
+
+    toolbarMain.title= title
+    setSupportActionBar(toolbarMain)
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.menu_main, menu)
+    return super.onCreateOptionsMenu(menu)
   }
 }
 
@@ -40,6 +49,8 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>) : 
   }
 
   override fun getItemCount(): Int = hillforts.size
+
+
 
   class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
