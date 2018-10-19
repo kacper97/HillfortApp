@@ -20,7 +20,7 @@ class HillfortListActivity : AppCompatActivity() {
 
     val layoutManager=LinearLayoutManager(this)
     recyclerView.layoutManager=layoutManager
-    recyclerView.adapter=HillfortAdapter(app.hillforts)
+    recyclerView.adapter=HillfortAdapter(app.hillforts.findAll())
 
     toolbarMain.title= title
     setSupportActionBar(toolbarMain)

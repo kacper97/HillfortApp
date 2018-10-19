@@ -32,7 +32,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       if (hillfort.title.isNotEmpty()) {
         app.hillforts.add(hillfort.copy())
         info("add Button Pressed: $hillfortTitle")
-        app.hillforts.forEach{info("add Button Pressed: ${it.title}")}
+        //app.hillforts.findAll().forEach{info("add Button Pressed: ${it}")}
         setResult(AppCompatActivity.RESULT_OK)
       }
       else {
