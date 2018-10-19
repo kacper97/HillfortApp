@@ -6,10 +6,12 @@ import org.wit.hillfort.R
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.wit.hillfort.main.MainApp
+import org.wit.hillfort.models.HillfortModel
 
-class HillfortListActivity : AppCompatActivity() {
+class HillfortListActivity : AppCompatActivity(), HillfortListener{
 
   lateinit var app: MainApp
 
@@ -20,7 +22,7 @@ class HillfortListActivity : AppCompatActivity() {
 
     val layoutManager=LinearLayoutManager(this)
     recyclerView.layoutManager=layoutManager
-    recyclerView.adapter=HillfortAdapter(app.hillforts.findAll())
+    recyclerView.adapter=HillfortAdapter(app.hillforts.findAll(),this)
 
     toolbarMain.title= title
     setSupportActionBar(toolbarMain)
@@ -36,6 +38,10 @@ class HillfortListActivity : AppCompatActivity() {
       R.id.item_add -> startActivityForResult<HillfortActivity>(0)
     }
     return super.onOptionsItemSelected(item)
+  }
+
+  override fun onHillfortClick(hillfort: HillfortModel) {
+    startActivityForResult(intentFor<HillfortActivity>(),0)
   }
 }
 

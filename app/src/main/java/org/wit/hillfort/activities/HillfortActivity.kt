@@ -30,9 +30,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
       if (hillfort.title.isNotEmpty()) {
-        app.hillforts.add(hillfort.copy())
+        //app.hillforts.add(hillfort.copy())
+        app.hillforts.create(hillfort.copy())
         info("add Button Pressed: $hillfortTitle")
-        //app.hillforts.findAll().forEach{info("add Button Pressed: ${it}")}
+        app.hillforts.findAll().forEach{info("add Button Pressed: ${it}")}
         setResult(AppCompatActivity.RESULT_OK)
       }
       else {
