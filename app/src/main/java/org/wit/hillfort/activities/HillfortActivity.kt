@@ -13,20 +13,19 @@ import org.wit.hillfort.R
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 
-var edit = false
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
   var hillfort = HillfortModel()
   lateinit var app: MainApp
 
   override fun onCreate(savedInstanceState: Bundle?) {
+    var edit = false
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_hillfort)
     app = application as MainApp
 
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
-
     if (intent.hasExtra("hillfort_edit")) {
       edit = true
       hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
@@ -40,6 +39,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.description = description.text.toString()
       if (hillfort.title.isNotEmpty()) {
         toast(R.string.enter_hillfort_title)
+      }else{
         if (edit) {
           app.hillforts.update(hillfort.copy())
         } else {
