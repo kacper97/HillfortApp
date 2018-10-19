@@ -17,7 +17,7 @@ var edit = false
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
   var hillfort = HillfortModel()
-  lateinit var app : MainApp
+  lateinit var app: MainApp
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
 
-    if(intent.hasExtra("hillfort_edit")){
+    if (intent.hasExtra("hillfort_edit")) {
       edit = true
       hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
       hillfortTitle.setText(hillfort.title)
@@ -50,19 +50,21 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       setResult(AppCompatActivity.RESULT_OK)
       finish()
     }
-
-
-  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-    menuInflater.inflate(R.menu.menu_hillfort,menu)
-    return super.onCreateOptionsMenu(menu)
   }
 
-  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    when(item?.itemId){
-      R.id.item_cancel-> {
-        finish()
-      }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+      menuInflater.inflate(R.menu.menu_hillfort, menu)
+      return super.onCreateOptionsMenu(menu)
     }
-    return super.onOptionsItemSelected(item)
-  }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+      when (item?.itemId) {
+        R.id.item_cancel -> {
+          finish()
+        }
+      }
+      return super.onOptionsItemSelected(item)
+    }
 }
