@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_hillfort.*
@@ -23,6 +22,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
   var hillfort = HillfortModel()
   val IMAGE_REQUEST = 1
+  val LOCATION_REQUEST = 2
+  var location = Location(52.245696, -7.139102, 15f)
   lateinit var app: MainApp
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +68,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     }
 
     hillfortLocation.setOnClickListener {
-      val location = Location(52.245695,-7.139102, 15f)
-      startActivity(intentFor<MapsActivity>())
+      startActivityForResult(intentFor<MapsActivity>().putExtra("location",location),LOCATION_REQUEST)
     }
   }
 
@@ -94,6 +94,11 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             hillfort.image=data.getData().toString()
             hillfortImage.setImageBitmap(readImage(this,resultCode,data))
             chooseImage.setText(R.string.change_hillfort_image)
+          }
+        }
+        LOCATION_REQUEST->{
+          if(data!=null){
+            location= data.extras.getParcelable<Location>("location")
           }
         }
       }
