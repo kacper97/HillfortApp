@@ -38,12 +38,15 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       description.setText(hillfort.description)
       btnAdd.setText(R.string.save_hillfort)
       hillfortImage.setImageBitmap(readImageFromPath(this,hillfort.image))
+      if(hillfort.image != null){
+        chooseImage.setText(R.string.change_hillfort_image)
+      }
     }
 
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
-      if (hillfort.title.isNotEmpty()) {
+      if (hillfort.title.isEmpty()) {
         toast(R.string.enter_hillfort_title)
       }else{
         if (edit) {
@@ -83,6 +86,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
           if(data!= null){
             hillfort.image=data.getData().toString()
             hillfortImage.setImageBitmap(readImage(this,resultCode,data))
+            chooseImage.setText(R.string.change_hillfort_image)
           }
         }
       }
