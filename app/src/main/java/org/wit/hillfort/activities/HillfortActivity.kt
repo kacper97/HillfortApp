@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.toast
 import org.wit.hillfort.R
 import org.wit.hillfort.helpers.readImage
+import org.wit.hillfort.helpers.readImageFromPath
 import org.wit.hillfort.helpers.showImagePicker
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
@@ -36,6 +37,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
       btnAdd.setText(R.string.save_hillfort)
+      hillfortImage.setImageBitmap(readImageFromPath(this,hillfort.image))
     }
 
     btnAdd.setOnClickListener() {
