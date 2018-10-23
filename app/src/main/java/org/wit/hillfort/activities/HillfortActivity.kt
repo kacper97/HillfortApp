@@ -1,5 +1,6 @@
 package org.wit.hillfort.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +11,7 @@ import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.toast
 import org.wit.hillfort.R
+import org.wit.hillfort.helpers.readImage
 import org.wit.hillfort.helpers.showImagePicker
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
@@ -58,8 +60,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     }
   }
 
-
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
       menuInflater.inflate(R.menu.menu_hillfort, menu)
       return super.onCreateOptionsMenu(menu)
@@ -73,4 +73,16 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       }
       return super.onOptionsItemSelected(item)
     }
+
+    override fun onActivityResult(requestCode: Int,resultCode: Int,data: Intent?){
+    super.onActivityResult(requestCode, resultCode, data)
+      when(requestCode){
+        IMAGE_REQUEST->{
+          if(data!= null){
+            hillfort.image=data.getData().toString()
+            hillfortImage.setImageBitmap(readImage(this,resultCode,data))
+          }
+        }
+      }
+  }
 }
