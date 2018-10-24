@@ -17,11 +17,9 @@ import org.wit.hillfort.models.Location
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerDragListener, GoogleMap.OnMarkerClickListener {
   override fun onMarkerDragStart(marker:Marker) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onMarkerDrag(marker:Marker) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onMarkerClick(marker:Marker):Boolean{
