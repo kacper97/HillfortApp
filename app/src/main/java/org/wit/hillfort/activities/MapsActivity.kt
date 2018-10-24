@@ -15,13 +15,19 @@ import com.google.android.gms.maps.model.MarkerOptions
 import org.wit.hillfort.R
 import org.wit.hillfort.models.Location
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerDragListener {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerDragListener, GoogleMap.OnMarkerClickListener {
   override fun onMarkerDragStart(marker:Marker) {
     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onMarkerDrag(marker:Marker) {
     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
+  override fun onMarkerClick(marker:Marker):Boolean{
+    val loc = LatLng(location.lat,location.lng)
+    marker.setSnippet("GPS : " + loc.toString())
+    return false
   }
 
   override fun onMarkerDragEnd(marker:Marker) {
@@ -47,6 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     map = googleMap
     map.setOnMarkerDragListener(this)
     val loc = LatLng(location.lat,location.lng)
+    map.setOnMarkerClickListener (this)
     val options = MarkerOptions()
         .title("Hillfort")
         .snippet("GPS: "+ loc.toString())
