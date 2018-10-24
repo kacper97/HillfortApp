@@ -46,6 +46,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       }
     }
 
+
+
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
