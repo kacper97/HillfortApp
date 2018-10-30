@@ -46,8 +46,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       }
     }
 
-
-
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
@@ -61,6 +59,12 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         }
       }
       info("add Button Pressed: $hillfortTitle")
+      setResult(AppCompatActivity.RESULT_OK)
+      finish()
+    }
+
+    btnDelete.setOnClickListener(){
+      app.hillforts.delete(hillfort.copy())
       setResult(AppCompatActivity.RESULT_OK)
       finish()
     }
