@@ -44,6 +44,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       if(hillfort.image != null){
         chooseImage.setText(R.string.change_hillfort_image)
       }
+      if(hillfortLocation != null){
+        hillfortLocation.setText("Change Current Location")
+      }
     }
 
     btnAdd.setOnClickListener() {
@@ -64,10 +67,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     }
 
     btnDelete.setOnClickListener(){
-      app.hillforts.delete(hillfort.copy())
-      setResult(AppCompatActivity.RESULT_OK)
-      finish()
-    }
+    app.hillforts.delete(hillfort.copy())
+    setResult(AppCompatActivity.RESULT_OK)
+    finish()
+  }
 
     chooseImage.setOnClickListener {
       showImagePicker(this,IMAGE_REQUEST)
