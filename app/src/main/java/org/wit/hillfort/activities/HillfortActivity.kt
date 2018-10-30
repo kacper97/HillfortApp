@@ -114,4 +114,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         }
       }
   }
+
+
 }
