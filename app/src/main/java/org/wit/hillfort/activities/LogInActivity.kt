@@ -29,12 +29,16 @@ class LogInActivity:  AppCompatActivity(), AnkoLogger {
         toast("Logged In")
         startActivityForResult(intentFor<HillfortListActivity>().putExtra("user_session", user), 0)
         finish()
-      } else {
-        toast("Incorrect log in credentials, try again please")
       }
+      else {
+        toast("Incorrect log in credentials, try again please")
+        //for debuging reasons only
+
+      /*  startActivityForResult(intentFor<HillfortListActivity>(),0)
+   */
     }
   }
-
+  }
   override fun onOptionsItemSelected(item: MenuItem?): Boolean{
   when (item?.itemId){
   R.id.login ->{

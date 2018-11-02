@@ -31,7 +31,6 @@ class UserMemStore: UserStore, AnkoLogger{
   override fun update(user: UserModel) {
     var foundUser: UserModel? = users.find { u -> u.id == user.id }
     if (foundUser != null) {
-
       foundUser.email = user.email
       foundUser.password = user.password
       logAll()
