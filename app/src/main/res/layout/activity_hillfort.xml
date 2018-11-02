@@ -78,16 +78,16 @@
                     android:textSize="16sp"/>
 
                 <Button
-                    android:id="@+id/chooseImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:text="@string/button_addImage"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"/>
+                android:id="@+id/chooseImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/colorAccent"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/button_addImage"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/btnDelete"
@@ -102,15 +102,6 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"/>
 
-                <ListView
-                    android:id="@+id/hillfort_images_list_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="254dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <Button
                     android:id="@+id/hillfortLocation"
                     android:layout_width="match_parent"
@@ -124,6 +115,14 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"/>
 
+                <ListView
+                    android:id="@+id/hillfort_images_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="254dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 </LinearLayout>

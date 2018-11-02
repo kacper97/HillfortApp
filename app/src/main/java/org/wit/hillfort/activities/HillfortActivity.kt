@@ -36,6 +36,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
 
+    chooseImage.setOnClickListener {
+      showImagePicker(this, IMAGE_REQUEST)
+    }
+
     if (intent.hasExtra("hillfort_edit")) {
       edit = true
       hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
@@ -45,9 +49,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       btnAdd.setText(R.string.save_hillfort)
 
       hillfort_images_list_view.adapter = HillfortImageAdapter(this, hillfort.images)
-      if(hillfort.images != null){
-        chooseImage.setText(R.string.change_hillfort_image)
-      }
+
       if(hillfortLocation != null){
         hillfortLocation.setText("Change Current Location")
       }
@@ -75,10 +77,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     setResult(AppCompatActivity.RESULT_OK)
     finish()
   }
-
-    chooseImage.setOnClickListener {
-      showImagePicker(this,IMAGE_REQUEST)
-    }
 
     hillfortLocation.setOnClickListener {
      val location = Location(52.245696, -7.139102, 15f)
