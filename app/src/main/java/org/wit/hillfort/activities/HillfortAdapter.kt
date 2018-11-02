@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.hillfort.R
 import org.wit.hillfort.helpers.readImageFromPath
@@ -13,7 +14,8 @@ interface HillfortListener{
   fun onHillfortClick(hillfort:HillfortModel)
 }
 
-class HillfortAdapter constructor(private var hillforts: List<HillfortModel>, private val listener:HillfortListener) : RecyclerView.Adapter<HillfortAdapter.MainHolder>() {
+class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
+                                  private val listener:HillfortListener) : RecyclerView.Adapter<HillfortAdapter.MainHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
     return MainHolder(LayoutInflater.from(parent?.context).inflate(R.layout.card_hillfort, parent, false))
@@ -33,8 +35,23 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>, pr
     fun bind(hillfort: HillfortModel, listener: HillfortListener) {
       itemView.hillfortTitle.text = hillfort.title
       itemView.description.text = hillfort.description
-      itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context,hillfort.image))
-      itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
+      //itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context,hillfort.image))
+      itemView.setOnClickListener{listener.onHillfortClick(hillfort)
+
+        if (hillfort.images.isEmpty()) {
+          Picasso.get()
+              .load(R.mipmap.ic_launcher_round)
+              .resize(750, 750)
+              .centerCrop()
+              .into(itemView.hillfortCardImage)
+        } else {
+          Picasso.get()
+              .load(hillfort.images[0]) // only load first image of list
+              .resize(1000, 1000)
+              .centerCrop()
+              .into(itemView.hillfortCardImage)
+        }
+      }
     }
   }
 }

@@ -10,32 +10,31 @@ import android.provider.MediaStore
 import org.wit.hillfort.R
 import java.io.IOException
 
+
 fun showImagePicker(parent: Activity, id: Int) {
   val intent = Intent()
   intent.type = "image/*"
-  //allow multiple is from api 18 and higher
-  intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
   intent.action = Intent.ACTION_OPEN_DOCUMENT
   intent.addCategory(Intent.CATEGORY_OPENABLE)
+  intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
   val chooser = Intent.createChooser(intent, R.string.select_hillfort_image.toString())
   parent.startActivityForResult(chooser, id)
 }
 
-fun readImage(activity: Activity, resultCode: Int, data:Intent?):Bitmap?{
+fun readImage(activity: Activity, resultCode: Int, data: Uri?): Bitmap? {
   var bitmap: Bitmap? = null
-  if(resultCode== Activity.RESULT_OK && data !=null && data.data !=null){
+  if (resultCode == Activity.RESULT_OK && data != null && data != null ) {
     try {
-      bitmap = MediaStore.Images.Media.getBitmap(activity.contentResolver, data.data)
-    }
-    catch(e:IOException){
+      bitmap = MediaStore.Images.Media.getBitmap(activity.contentResolver, data)
+    } catch (e: IOException) {
       e.printStackTrace()
     }
   }
   return bitmap
 }
 
-fun readImageFromPath(context: Context, path: String):Bitmap?{
-  var bitmap : Bitmap?=null
+fun readImageFromPath(context: Context, path : String) : Bitmap? {
+  var bitmap : Bitmap? = null
   val uri = Uri.parse(path)
   if (uri != null) {
     try {
@@ -48,4 +47,3 @@ fun readImageFromPath(context: Context, path: String):Bitmap?{
   }
   return bitmap
 }
-
