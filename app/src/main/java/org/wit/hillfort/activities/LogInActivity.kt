@@ -17,8 +17,8 @@ class LogInActivity:  AppCompatActivity(), AnkoLogger {
     setContentView(R.layout.activity_login)
     app = application as MainApp
 
-    toolbarLogIn.title = title
-    setSupportActionBar(toolbarLogIn)
+    toolbarRegister.title = title
+    setSupportActionBar(toolbarRegister)
 
     btnLogIn.setOnClickListener() {
       val email = logInEmail.text.toString()
@@ -32,16 +32,12 @@ class LogInActivity:  AppCompatActivity(), AnkoLogger {
       }
       else {
         toast("Incorrect log in credentials, try again please")
-        //for debuging reasons only
-
-      /*  startActivityForResult(intentFor<HillfortListActivity>(),0)
-   */
     }
   }
   }
   override fun onOptionsItemSelected(item: MenuItem?): Boolean{
   when (item?.itemId){
-  R.id.login ->{
+  R.id.reg ->{
     startActivity<RegisterActivity>()
   }
   }

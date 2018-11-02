@@ -15,7 +15,11 @@
     <string name="button_deleteHillfort">Remove Hillfort</string>
     <string name="loader_text">Welcome to the Hillfort App</string>
     <string name="button_logIn">Log in</string>
+    <string name="button_register">Register</string>
     <string name="hint_email">Enter Email Here</string>
     <string name="hint_password"> Enter Password here</string>
     <string name="menu_login">Log in</string>
+    <string name="reg_cancel">Cancel Registration</string>
+    <string name="reg">Register</string>
+
 </resources>
