@@ -10,15 +10,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <ImageView
-        android:id="@+id/hillfortCardImage"
-        android:layout_width="228dp"
-        android:layout_height="151dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp"
-        android:scaleType="fitCenter" />
-
 
         <TextView
             android:id="@+id/hillfortTitle"
@@ -32,6 +23,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/hillfortTitle"/>
+
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:scaleType="fitCenter" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

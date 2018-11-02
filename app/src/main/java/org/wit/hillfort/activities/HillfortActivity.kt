@@ -40,6 +40,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       showImagePicker(this, IMAGE_REQUEST)
     }
 
+
     if (intent.hasExtra("hillfort_edit")) {
       edit = true
       hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
@@ -109,11 +110,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         IMAGE_REQUEST->{
           if(data!= null){
             hillfort.images.add(data.data.toString())
-
             hillfort_images_list_view.adapter = HillfortImageAdapter(this, hillfort.images)
           }
-
         }
+
         LOCATION_REQUEST->{
           if(data!=null){
             val location= data.extras.getParcelable<Location>("location")

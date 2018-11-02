@@ -9,8 +9,7 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import org.wit.hillfort.R
 
-class HillfortImageAdapter(private val context: Context,
-                           private val images: ArrayList<String>) : BaseAdapter() {
+class HillfortImageAdapter(private val context: Context, private val images: ArrayList<String>) : BaseAdapter() {
 
   private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 

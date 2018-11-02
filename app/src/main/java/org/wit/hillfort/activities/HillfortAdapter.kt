@@ -36,22 +36,21 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
       itemView.hillfortTitle.text = hillfort.title
       itemView.description.text = hillfort.description
       //itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context,hillfort.image))
-      itemView.setOnClickListener{listener.onHillfortClick(hillfort)
-
         if (hillfort.images.isEmpty()) {
           Picasso.get()
               .load(R.mipmap.ic_launcher_round)
-              .resize(750, 750)
+              .resize(500, 500)
               .centerCrop()
-              .into(itemView.hillfortCardImage)
+              .into(itemView.imageIcon)
         } else {
           Picasso.get()
-              .load(hillfort.images[0]) // only load first image of list
-              .resize(1000, 1000)
+              .load(hillfort.images[0]) // first image of arraylist
+              .resize(500, 500)
               .centerCrop()
-              .into(itemView.hillfortCardImage)
+              .into(itemView.imageIcon)
         }
+
+          itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
       }
     }
   }
-}
