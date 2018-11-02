@@ -12,8 +12,14 @@ class MainApp : Application(), AnkoLogger {
 
   override fun onCreate() {
     super.onCreate()
+    users.create(UserModel(0,"kacpix@w.com","password"))
+    users.create(UserModel(1,"kacpx@w.com","password"))
+    users.create(UserModel(2,"kacpi@w.com","password"))
+
     hillforts = HillfortJSONStore(applicationContext)
     users = UserJSONStore(applicationContext)
     info("Hillfort started")
+
+    //
   }
 }

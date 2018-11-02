@@ -2,17 +2,14 @@ package org.wit.hillfort.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_hillfort.*
-import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
-import org.jetbrains.anko.toast
+import android.view.Menu
+import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.*
 import org.wit.hillfort.main.MainApp
-import org.wit.hillfort.models.UserModel
 import org.wit.hillfort.R
 
 class LogInActivity:  AppCompatActivity(), AnkoLogger {
-
-  var user = UserModel()
   lateinit var app : MainApp
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +17,36 @@ class LogInActivity:  AppCompatActivity(), AnkoLogger {
     setContentView(R.layout.activity_login)
     app = application as MainApp
 
-    btnAdd.setOnClickListener() {
-        toast ("Please Enter an email")
+    toolbarLogIn.title = title
+    setSupportActionBar(toolbarLogIn)
+
+    btnLogIn.setOnClickListener() {
+      val email = logInEmail.text.toString()
+      val password = logInPassword.text.toString()
+
+      var user = app.users.findAll().find { it.email == email && it.password == password }
+      if (user != null) {
+        toast("Logged In")
+        startActivityForResult(intentFor<HillfortListActivity>().putExtra("user_session", user), 0)
+        finish()
+      } else {
+        toast("Incorrect log in credentials, try again please")
       }
     }
   }
+
+  override fun onOptionsItemSelected(item: MenuItem?): Boolean{
+  when (item?.itemId){
+  R.id.login ->{
+    startActivity<RegisterActivity>()
+  }
+  }
+  return super.onOptionsItemSelected(item)
+}
+
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.menu_login,menu)
+    return super.onCreateOptionsMenu(menu)
+  }
+}
 

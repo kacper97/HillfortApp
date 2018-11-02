@@ -23,11 +23,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.LogInActivity">
-
         </activity>
         <activity android:name=".activities.HillfortListActivity">
         </activity>
-        <activity android:name=".activities.HillfortActivity" >
+        <activity android:name=".activities.HillfortActivity">
         </activity>
 
 

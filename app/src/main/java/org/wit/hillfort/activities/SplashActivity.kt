@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
   internal val mRunnable: Runnable = Runnable {
     if (!isFinishing) {
 // initialises the next thing after app context -> loggin screen
-      val intent = Intent(applicationContext, HillfortListActivity::class.java)
+      val intent = Intent(applicationContext, LogInActivity::class.java)
       startActivity(intent)
       finish()
     }

@@ -17,4 +17,5 @@
     <string name="button_logIn">Log in</string>
     <string name="hint_email">Enter Email Here</string>
     <string name="hint_password"> Enter Password here</string>
+    <string name="menu_login">Log in</string>
 </resources>
