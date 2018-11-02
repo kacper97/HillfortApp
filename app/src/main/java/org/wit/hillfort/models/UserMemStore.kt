@@ -2,10 +2,12 @@ package org.wit.hillfort.models
 
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import java.util.*
 
-var userId=0L
-internal fun getUserId():Long{
-  return userId++
+private var lastId=0L
+
+private fun getId():Long {
+  return Random().nextLong()
 }
 
 class UserMemStore: UserStore, AnkoLogger{
@@ -16,17 +18,17 @@ class UserMemStore: UserStore, AnkoLogger{
     return users
   }
 
-  override fun create(hillfort: UserModel) {
-    user.id = getid()
+  override fun create(user: UserModel) {
+    user.id = getId()
     users.add(user)
     logAll()
   }
 
-  override fun delete(hillfort: UserModel) {
-    users.remove(hillfort)
+  override fun delete(user: UserModel) {
+    users.remove(user)
   }
 
-  override fun update(hillfort: HillfortModel) {
+  override fun update(user: UserModel) {
     var foundUser: UserModel? = users.find { u -> u.id == user.id }
     if (foundUser != null) {
 
