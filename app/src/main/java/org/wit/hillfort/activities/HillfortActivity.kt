@@ -18,6 +18,7 @@ import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.Location
 import com.squareup.picasso.Picasso
+import java.util.*
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
@@ -47,6 +48,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
       checkbox_visited.setChecked(hillfort.visited)
+      hillfortDate.setText(hillfort.date)
 
       btnAdd.setText(R.string.save_hillfort)
 
@@ -61,6 +63,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
       hillfort.visited = checkbox_visited.isChecked
+      hillfort.date = hillfortDate.text.toString()
       if (hillfort.title.isEmpty()) {
         toast(R.string.enter_hillfort_title)
       }else{
@@ -73,6 +76,15 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       info("add Button Pressed: $hillfortTitle")
       setResult(AppCompatActivity.RESULT_OK)
       finish()
+    }
+
+    checkbox_visited.setOnClickListener{
+      if (checkbox_visited.isChecked){
+        hillfort.date = Date().toString()
+      }else {
+        hillfort.date = ""
+      }
+      hillfortDate.setText(hillfort.date)
     }
 
     btnDelete.setOnClickListener(){

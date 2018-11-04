@@ -73,6 +73,13 @@
                     android:padding="10dp"
                     android:text="@string/checkbox_visited"/>
 
+                <EditText
+                    android:id="@+id/hillfortDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    tools:layout_editor_absoluteX="100dp"
+                    tools:layout_editor_absoluteY="200dp" />
 
                 <Button
                     android:id="@+id/btnAdd"
