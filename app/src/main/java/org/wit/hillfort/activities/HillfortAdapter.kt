@@ -39,13 +39,13 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
         if (hillfort.images.isEmpty()) {
           Picasso.get()
               .load(R.mipmap.ic_launcher_round)
-              .resize(500, 500)
+              .resize(1024, 720)
               .centerInside()
               .into(itemView.imageIcon)
         } else {
           Picasso.get()
-              .load(hillfort.images[0]) // first image of arraylist
-              .resize(500, 500)
+              .load(hillfort.images[0]) // first image in arraylist
+              .resize(1024, 720)
               .centerInside()
               .into(itemView.imageIcon)
         }
