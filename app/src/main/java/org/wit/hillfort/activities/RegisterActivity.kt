@@ -25,10 +25,7 @@ class RegisterActivity:  AppCompatActivity(), AnkoLogger {
     toolbarRegister.title = getString(R.string.reg_title)
     setSupportActionBar(toolbarRegister)
 
-
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-            button_register.setOnClickListener() {
+          button_register.setOnClickListener() {
           val email = regEmail.text.toString()
           val password = regPassword.text.toString()
 
@@ -43,16 +40,13 @@ class RegisterActivity:  AppCompatActivity(), AnkoLogger {
           }
 
         }
-
       }
 
       override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-
           R.id.reg_cancel -> {
             finish()
           }
-
         }
         return super.onOptionsItemSelected(item)
       }
