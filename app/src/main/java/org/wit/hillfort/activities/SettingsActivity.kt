@@ -3,6 +3,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_setting.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -22,6 +23,9 @@ class SettingsActivity : AppCompatActivity() {
 
     setSupportActionBar(toolbarSettings)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    toolbarSettings.title = getString(R.string.setting_title)
+    setSupportActionBar(toolbarSettings)
 
     if(intent.hasExtra("user_session")) {
       user = intent.extras.getParcelable<UserModel>("user_session")

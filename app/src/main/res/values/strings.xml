@@ -28,4 +28,8 @@
     <string name="menu_settings_save">Save Settings</string>
     <string name="toast_changed_cant_be_blank">Please enter valid Credentials</string>
     <string name="hint_hillfortNotes">Additional Notes</string>
+    <string name="login_title">Log In</string>
+    <string name="reg_title">Register</string>
+    <string name="setting_title">Settings</string>
+
 </resources>

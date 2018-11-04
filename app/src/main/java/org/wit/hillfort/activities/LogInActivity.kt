@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.*
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.R
@@ -17,8 +18,8 @@ class LogInActivity:  AppCompatActivity(), AnkoLogger {
     setContentView(R.layout.activity_login)
     app = application as MainApp
 
-    toolbarRegister.title = title
-    setSupportActionBar(toolbarRegister)
+    toolbarLogIn.title = getString(R.string.login_title)
+    setSupportActionBar(toolbarLogIn)
 
     btnLogIn.setOnClickListener() {
       val email = logInEmail.text.toString()

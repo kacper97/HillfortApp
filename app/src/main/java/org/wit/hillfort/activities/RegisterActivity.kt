@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_hillfort.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -21,14 +22,13 @@ class RegisterActivity:  AppCompatActivity(), AnkoLogger {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_register)
     app = application as MainApp
+    toolbarRegister.title = getString(R.string.reg_title)
+    setSupportActionBar(toolbarRegister)
 
-        toolbarLogIn.title = title
-        setSupportActionBar(toolbarLogIn)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
             button_register.setOnClickListener() {
-
           val email = regEmail.text.toString()
           val password = regPassword.text.toString()
 
