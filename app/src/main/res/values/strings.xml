@@ -22,5 +22,7 @@
     <string name="reg_cancel">Cancel Registration</string>
     <string name="reg">Register</string>
     <string name="checkbox_visited">Visited</string>
+    <string name="toast_logout">Bye for now</string>
+    <string name="menu_logout">Logout</string>
 
 </resources>

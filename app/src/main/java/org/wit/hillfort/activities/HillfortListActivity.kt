@@ -11,6 +11,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
+import org.jetbrains.anko.toast
 
 class HillfortListActivity : AppCompatActivity(), HillfortListener{
 
@@ -38,6 +39,11 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener{
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     when(item?.itemId){
       R.id.item_add -> startActivityForResult<HillfortActivity>(0)
+      R.id.item_logout -> {
+        startActivityForResult<LogInActivity>(0)
+        toast(R.string.toast_logout)
+      }
+
     }
     return super.onOptionsItemSelected(item)
   }
