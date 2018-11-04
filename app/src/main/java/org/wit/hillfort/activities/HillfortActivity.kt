@@ -46,6 +46,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
+      checkbox_visited.setChecked(hillfort.visited)
 
       btnAdd.setText(R.string.save_hillfort)
 
@@ -59,6 +60,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
+      hillfort.visited = checkbox_visited.isChecked
       if (hillfort.title.isEmpty()) {
         toast(R.string.enter_hillfort_title)
       }else{

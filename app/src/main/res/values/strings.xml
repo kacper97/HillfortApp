@@ -21,5 +21,6 @@
     <string name="menu_login">Log in</string>
     <string name="reg_cancel">Cancel Registration</string>
     <string name="reg">Register</string>
+    <string name="checkbox_visited">Visited</string>
 
 </resources>
