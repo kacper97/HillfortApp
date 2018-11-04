@@ -84,7 +84,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       if (checkbox_visited.isChecked){
         hillfort.date = Date().toString()
       }else {
-        hillfort.date = ""
+        hillfort.date =""
       }
       hillfortDate.setText(hillfort.date)
     }
