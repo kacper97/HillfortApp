@@ -49,6 +49,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       description.setText(hillfort.description)
       checkbox_visited.setChecked(hillfort.visited)
       hillfortDate.setText(hillfort.date)
+      hillfortNotes.setText(hillfort.notes)
 
       btnAdd.setText(R.string.save_hillfort)
 
@@ -64,6 +65,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.description = description.text.toString()
       hillfort.visited = checkbox_visited.isChecked
       hillfort.date = hillfortDate.text.toString()
+      hillfort.notes = hillfortNotes.text.toString()
       if (hillfort.title.isEmpty()) {
         toast(R.string.enter_hillfort_title)
       }else{
