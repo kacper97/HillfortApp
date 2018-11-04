@@ -90,22 +90,7 @@
                     android:id="@+id/hillfortDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-                    tools:layout_editor_absoluteX="100dp"
-                    tools:layout_editor_absoluteY="200dp" />
-
-                <Button
-                    android:id="@+id/btnAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/button_addHillfort"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                    android:inputType="date" />
 
                 <Button
                     android:id="@+id/chooseImage"
@@ -116,19 +101,6 @@
                     android:paddingBottom="8dp"
                     android:paddingTop="8dp"
                     android:text="@string/button_addImage"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:id="@+id/btnDelete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/button_deleteHillfort"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -145,6 +117,31 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/colorAccent"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_addHillfort"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/colorAccent"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_deleteHillfort"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
 
                 <ListView
                     android:id="@+id/hillfort_images_list_view"
@@ -154,8 +151,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-
 
             </LinearLayout>
         </ScrollView>
