@@ -1,10 +1,10 @@
 package org.wit.hillfort.activities
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.wit.hillfort.R
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.*
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.intentFor
@@ -27,7 +27,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener{
     toolbarMain.title= title
     setSupportActionBar(toolbarMain)
 
-    val layoutManager=LinearLayoutManager(this)
+    val layoutManager= androidx.recyclerview.widget.LinearLayoutManager(this)
     recyclerView.layoutManager=layoutManager
     recyclerView.adapter = HillfortAdapter(app.hillforts.findAll(),this)
     loadHillforts()
