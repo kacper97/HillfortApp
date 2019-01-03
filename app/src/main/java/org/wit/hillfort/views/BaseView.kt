@@ -33,7 +33,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
       VIEW.MAPS -> intent = Intent(this, HillfortMapView::class.java)
       VIEW.LIST -> intent = Intent(this, HillfortListView::class.java)
       VIEW.SETTINGS -> intent = Intent(this, SettingsView::class.java)
-      VIEW.LOGIN -> intent = Intent(this, LogInView::class.java)
+      VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
       VIEW.REGISTER -> intent = Intent(this, RegisterView::class.java)
     }
     if (key != "") {
