@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import org.wit.hillfort.R
+import org.wit.hillfort.views.login.LoginView
 
 class SplashActivity : AppCompatActivity() {
   private var mDelayHandler: Handler? = null
@@ -13,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
   internal val mRunnable: Runnable = Runnable {
     if (!isFinishing) {
 // initialises the next thing after app context -> loggin screen
-      val intent = Intent(applicationContext, LogInActivity::class.java)
+      val intent = Intent(applicationContext, LoginView::class.java)
       startActivity(intent)
       finish()
     }
