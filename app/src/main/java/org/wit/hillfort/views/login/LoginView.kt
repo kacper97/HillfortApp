@@ -21,16 +21,16 @@ class LoginView : BaseView(), AnkoLogger {
 
     presenter = initPresenter (LoginPresenter(this)) as LoginPresenter
 
-    toolbarLogin.title = getString(R.string.login_title)
-    setSupportActionBar(toolbarLogin)
+    toolbarLogIn.title = getString(R.string.login_title)
+    setSupportActionBar(toolbarLogIn)
 
     progressBar.visibility = View.GONE
 
-    login_button.setOnClickListener() {
+    button_logIn.setOnClickListener() {
 
-      val email = login_email.text.toString()
-      val password = login_password.text.toString()
-      presenter.doSignIn(email, password)
+      val email = logInEmail.text.toString()
+      val password = logInPassword.text.toString()
+      presenter.doLogIn(email, password)
     }
 
   }
@@ -38,7 +38,7 @@ class LoginView : BaseView(), AnkoLogger {
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     when (item?.itemId) {
 
-      R.id.register -> {
+      R.id.reg -> {
         navigateTo(VIEW.REGISTER)
       }
 
