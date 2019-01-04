@@ -1,5 +1,5 @@
 package org.wit.hillfort.helpers
-
+//This calass is for checking the location of the user
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -24,7 +24,7 @@ fun isPermissionGranted(code: Int, grantResults: IntArray): Boolean {
   var permissionGranted = false;
   if (code == REQUEST_PERMISSIONS_REQUEST_CODE) {
     when {
-      grantResults.isEmpty() -> Log.i("Location", "User interaction was cancelled.")
+      grantResults.isEmpty() -> Log.i("Location", "User stopped interaction.")
       (grantResults[0] == PackageManager.PERMISSION_GRANTED) -> {
         permissionGranted = true
         Log.i("Location", "Permission Granted.")
@@ -35,11 +35,11 @@ fun isPermissionGranted(code: Int, grantResults: IntArray): Boolean {
   return permissionGranted
 }
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("Restricted Api")
 fun createDefaultLocationRequest() : LocationRequest {
   val locationRequest = LocationRequest().apply {
-    interval = 10000
-    fastestInterval = 5000
+    interval = 1000
+    fastestInterval = 500
     priority = LocationRequest.PRIORITY_HIGH_ACCURACY
   }
   return locationRequest
