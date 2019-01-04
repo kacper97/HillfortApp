@@ -40,9 +40,9 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
       }
     }
 
-    hillfortVisited.setOnClickListener {
+    checkbox_visited.setOnClickListener {
       tempSave()
-      presenter.doVisitedCheckbox(hillfortVisited.isChecked)
+      presenter.doVisitedCheckbox(checkbox_visited.isChecked)
     }
 
     hillfortFavorite.setOnClickListener {
@@ -59,12 +59,12 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
     hillfortTitle.setText(hillfort.title)
     hillfortDescription.setText(hillfort.description)
     hillfortNotes.setText(hillfort.notes)
-    hillfortVisited.setChecked(hillfort.visited)
+    checkbox_visited.setChecked(hillfort.visited)
     hillfortFavorite.setChecked(hillfort.favorite)
     hillfortDate.setText(hillfort.date)
     hillfortRating.setRating(hillfort.rating)
-    display_lat.setText("%.6f".format(hillfort.location.lat))
-    display_lng.setText("%.6f".format(hillfort.location.lng))
+    display_lat.setText("%.6f".format(hillfort.lat))
+    display_lng.setText("%.6f".format(hillfort.lng))
     showHillfortImages(hillfort.images)
   }
 

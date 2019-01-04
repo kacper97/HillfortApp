@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.*
 import org.wit.hillfort.R
 import org.wit.hillfort.views.BaseView
+import org.wit.hillfort.views.VIEW
 
 
 class LoginView : BaseView(), AnkoLogger {
@@ -26,7 +27,7 @@ class LoginView : BaseView(), AnkoLogger {
 
     progressBar.visibility = View.GONE
 
-    button_logIn.setOnClickListener() {
+    btnLogIn.setOnClickListener() {
 
       val email = logInEmail.text.toString()
       val password = logInPassword.text.toString()

@@ -1,5 +1,6 @@
-import android.content.Intent
+package org.wit.hillfort.views
 
+import android.content.Intent
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar

@@ -5,7 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import org.wit.hillfort.R.*
+import org.wit.hillfort.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.*
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
@@ -23,7 +23,7 @@ class HillfortListView : BaseView(), HillfortListener {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_hillfort_list)
-    setSupportActionBar(toolbarAdd)
+    setSupportActionBar(toolbarappBarLayout2)
 
     presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
 
