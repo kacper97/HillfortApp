@@ -3,9 +3,10 @@
     <string name="app_name">Hillfort</string>
     <!--MENUS-->
     <string name="menu_addHillfort">Add</string>
+    <string name="menu_deleteHillfort">Delete</string>
     <string name="menu_cancelHillfort">Cancel</string>
     <string name="menu_login">Log in</string>
-    <string name="reg">Register</string>
+    <string name="menu_reg">Register</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_settings">Settings</string>
 
@@ -35,6 +36,7 @@
     <string name="hint_hillfortDescription">Description</string>
     <string name="toast_logout">Bye for now</string>
     <string name="toast_changed_cant_be_blank">Please enter valid credentials</string>
+    <string name="toast_enterTitlePlease">Please enter a title for hillfort</string>
     <string name="hint_hillfortNotes">Additional Notes</string>
 
     <!-- HEADINGS. -->

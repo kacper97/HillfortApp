@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/reg"
-        android:title="@string/reg"
+        android:title="@string/menu_reg"
         app:showAsAction="always"/>
 </menu>
