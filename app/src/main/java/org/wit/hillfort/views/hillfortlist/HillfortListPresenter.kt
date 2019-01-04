@@ -30,7 +30,7 @@ class HillfortListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     view?.navigateTo(VIEW.MAPS)
   }
 
-  fun loadHilforts() {
+  fun loadHillforts() {
     if (favorite){
       view?.showHillforts(app.hillforts.filter { hf -> hf.favorite })
     } else {

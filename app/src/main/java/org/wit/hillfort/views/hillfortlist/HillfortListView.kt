@@ -5,12 +5,12 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import org.wit.hillfort.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.*
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
+import org.wit.hillfort.R
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.UserModel
 import org.wit.hillfort.views.BaseView
@@ -50,7 +50,7 @@ class HillfortListView : BaseView(), HillfortListener {
     }
 
     recyclerView.layoutManager = layoutManager
-    presenter.loadHilforts()
+    presenter.loadHillforts()
 
   }
 
@@ -60,7 +60,7 @@ class HillfortListView : BaseView(), HillfortListener {
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-    presenter.loadHilforts()
+    presenter.loadHillforts()
     super.onActivityResult(requestCode, resultCode, data)
   }
 
@@ -82,7 +82,7 @@ class HillfortListView : BaseView(), HillfortListener {
         } else {
           presenter.favorite = false
         }
-        presenter.loadHilforts()
+        presenter.loadHillforts()
       }
       R.id.item_map -> { presenter.doShowHillfortMap() }
       R.id.item_settings -> { presenter.doSettings() }
