@@ -169,7 +169,7 @@
                 android:id="@+id/hillfortNotes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="10dp"
                 android:hint="@string/hint_hillfortNotes"
                 android:inputType="textMultiLine"
                 android:maxLength="100"
