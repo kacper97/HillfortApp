@@ -17,7 +17,7 @@ class SettingsPresenter(view: BaseView) : BasePresenter(view){
     if (settings_email.isEmpty() || settings_password.isEmpty()){
       view?.toast(R.string.toast_changed_cant_be_blank)
     } else {
-      view?.toast("Cant change these with firebase yet")
+      view?.toast("Not implented yet")
     }
 
     view?.setResult(AppCompatActivity.RESULT_OK)

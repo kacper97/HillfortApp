@@ -11,7 +11,7 @@ import org.wit.hillfort.views.BaseView
 
 
 class SettingsView : BaseView() {
-
+  // all the information that is displayed in settings tab
   lateinit var presenter: SettingsPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {

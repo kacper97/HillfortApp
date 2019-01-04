@@ -28,12 +28,10 @@ class LoginView : BaseView(), AnkoLogger {
     progressBar.visibility = View.GONE
 
     btnLogIn.setOnClickListener() {
-
       val email = logInEmail.text.toString()
       val password = logInPassword.text.toString()
       presenter.doLogIn(email, password)
     }
-
   }
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {

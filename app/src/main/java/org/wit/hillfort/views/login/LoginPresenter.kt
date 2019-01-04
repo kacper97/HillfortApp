@@ -16,10 +16,10 @@ class LoginPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     val showProgress: Any = view?.showProgress()!!
     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(view!!) { task ->
       if (task.isSuccessful) {
-        view?.toast("log in as " + FirebaseAuth.getInstance().currentUser?.email.toString())
+        view?.toast("login as " + FirebaseAuth.getInstance().currentUser?.email.toString())
         view?.navigateTo(VIEW.LIST)
       } else {
-        view?.toast("log In Failed: ${task.exception?.message}")
+        view?.toast("Try again-login Failed: ${task.exception?.message}")
       }
       view?.hideProgress()
     }

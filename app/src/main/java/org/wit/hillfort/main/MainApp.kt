@@ -13,9 +13,6 @@ class MainApp : Application(), AnkoLogger {
   lateinit var firestore : HillfortFireStore
   override fun onCreate() {
     super.onCreate()
-    // hillforts = HillfortMemStore(applicationContext)
-    // users = UserMemStore(applicationContext)
-    //hillforts = HillfortJSONStore(applicationContext)
     firestore = HillfortFireStore(applicationContext)
     hillforts = firestore.hillforts
 

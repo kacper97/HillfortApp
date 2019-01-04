@@ -63,6 +63,7 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
     hillfortFavorite.setChecked(hillfort.favorite)
     hillfortDate.setText(hillfort.date)
     hillfortRating.setRating(hillfort.rating)
+    //as in lab
     display_lat.setText("%.6f".format(hillfort.lat))
     display_lng.setText("%.6f".format(hillfort.lng))
     showHillfortImages(hillfort.images)
@@ -97,6 +98,7 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
         if (title.isEmpty()) {
           toast(R.string.enter_hillfort_title)
         } else {
+          //same order as above
           presenter.doAddOrSave(title, description,  visited,notes, date,favorite, rating)
         }
         setResult(AppCompatActivity.RESULT_OK)
@@ -110,7 +112,7 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
     return super.onOptionsItemSelected(item)
   }
 
-  // Temporarily save hillfort fields in presenter hillfort object
+  // Temporarily save if no internet
   fun tempSave(){
     var title = hillfortTitle.text.toString()
     var description = hillfortDescription.text.toString()
@@ -119,6 +121,7 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
     var favorite = hillfortFavorite.isChecked()
     var date = hillfortDate.text.toString()
     var rating = hillfortRating.rating
+   //same order as above
     presenter.doTempSave(title, description, notes, visited, favorite, date, rating)
   }
 

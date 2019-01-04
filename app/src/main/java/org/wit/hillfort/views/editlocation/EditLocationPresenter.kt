@@ -21,16 +21,11 @@ class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
     val loc = LatLng(location.lat, location.lng)
     val options = MarkerOptions()
         .title("Hillfort")
-        .snippet("GPS : " + loc.toString())
+        .snippet("Location: " + loc.toString())
         .draggable(true)
         .position(loc)
     map.addMarker(options)
     map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
-  }
-
-  fun doUpdateLocation(lat: Double, lng: Double) {
-    location.lat = lat
-    location.lng = lng
   }
 
   fun doSave() {
@@ -43,5 +38,10 @@ class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
   fun doUpdateMarker(marker: Marker) {
     val loc = LatLng(location.lat, location.lng)
     marker.setSnippet("GPS : " + loc.toString())
+  }
+
+  fun doUpdateLocation(lat: Double, lng: Double) {
+    location.lat = lat
+    location.lng = lng
   }
 }

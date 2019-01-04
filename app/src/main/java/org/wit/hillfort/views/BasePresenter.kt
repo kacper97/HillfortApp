@@ -1,5 +1,5 @@
 package org.wit.hillfort.views
-
+//same as lab
 import android.content.Intent
 import org.wit.hillfort.main.MainApp
 

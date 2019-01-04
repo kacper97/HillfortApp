@@ -1,5 +1,4 @@
 package org.wit.hillfort.views.hillfort
-
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -24,16 +23,13 @@ class HillfortImageAdapter constructor(private var images: List<String>, private
     val image = images[holder.adapterPosition]
     holder.bind(image, listener)
   }
-
-
-
   class MainHolder constructor(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     fun bind(image: String, listener: HillfortImageListener) {
 
       Picasso.get()
           .load(image)
-          .resize(1000,600)
+          .resize(500,500)
           .into(itemView.specifichillfortImage)
 
       itemView.setOnClickListener { listener.onHillfortImageClick(image) }

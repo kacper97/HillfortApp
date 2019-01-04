@@ -16,6 +16,7 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
 
   var map: GoogleMap? = null
   var hillfort = HillfortModel()
+ //wit
   var defaultLocation = Location(52.245696, -7.139102, 15f)
   var edit = false
 
@@ -26,7 +27,6 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
       hillfort = view.intent.extras.getParcelable<HillfortModel>("hillfort_edit")
       view.showHillfort(hillfort)
     }
-
   }
 
   fun doAddOrSave(title: String, description: String, visited: Boolean, date: String, notes: String, favorite: Boolean, rating: Float) {
@@ -46,7 +46,7 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
     view?.finish()
   }
 
-  // Temporarily save the field values to the Presenter Hillfort object
+  // Temporarily save if no internet
   fun doTempSave(title: String, description: String, notes: String, visited: Boolean, favorite: Boolean, date: String, rating: Float){
     hillfort.title = title
     hillfort.description = description
@@ -76,14 +76,6 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
     view?.showHillfortImages(hillfort.images)
   }
 
-  fun doSetLocation() {
-    if (edit == false) {
-      view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", defaultLocation)
-    } else {
-      view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", Location(hillfort.lat, hillfort.lng, hillfort.zoom))
-    }
-  }
-
   fun doFavoriteCheckbox(favorite: Boolean) {
     hillfort.favorite = favorite
     view?.showHillfort(hillfort)
@@ -101,13 +93,20 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
     view?.showHillfort(hillfort)
   }
 
+  fun doSetLocation() {
+    if (edit == false) {
+      view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", defaultLocation)
+    } else {
+      view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", Location(hillfort.lat, hillfort.lng, hillfort.zoom))
+    }
+  }
 
   fun doConfigureMap(m: GoogleMap) {
     map = m
-    locationUpdate(hillfort.lat, hillfort.lng)
+    doLocationUpdate(hillfort.lat, hillfort.lng)
   }
 
-  fun locationUpdate(lat: Double, lng: Double) {
+  fun doLocationUpdate(lat: Double, lng: Double) {
     hillfort.lat = lat
     hillfort.lng = lng
     hillfort.zoom = 15f
@@ -137,7 +136,7 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
           hillfort.lat = location.lat
           hillfort.lng = location.lng
           hillfort.zoom = location.zoom
-          locationUpdate(hillfort.lat, hillfort.lng)
+          doLocationUpdate(hillfort.lat, hillfort.lng)
         }
       }
 
