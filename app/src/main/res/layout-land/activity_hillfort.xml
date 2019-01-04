@@ -26,7 +26,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appBarLayout">
@@ -39,10 +39,10 @@
 
             <TextView
                 android:id="@+id/display_lat"
+                android:text="00.0000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="00.000000"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/hillfortTitle"
@@ -50,13 +50,13 @@
 
             <TextView
                 android:id="@+id/display_lng"
+                android:text="00.0000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="00.000000"
                 android:visibility="invisible"
+                app:layout_constraintHorizontal_bias="0.50"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toEndOf="@+id/hillfortTitle"
                 app:layout_constraintTop_toBottomOf="@+id/display_lat" />
 
@@ -66,35 +66,34 @@
                 android:layout_height="wrap_content"
                 android:isIndicator="false"
                 android:numStars="5"
-                android:stepSize="0.1"
+                android:stepSize="0.05"
                 android:visibility="invisible"
+                app:layout_constraintVertical_bias="1.0"
                 app:layout_constraintBottom_toTopOf="@+id/mapView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hillfortVisited"
-                app:layout_constraintVertical_bias="1.0" />
+                 />
 
             <com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
                 android:layout_width="0dp"
                 android:layout_height="250dp"
                 android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/chooseImage" />
 
             <EditText
-                android:id="@+id/hillfortDescription"
+                android:id="@+id/description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="10dp"
                 android:ems="10"
                 android:hint="@string/hint_hillfortDescription"
-                android:inputType="textPersonName"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hillfortTitle" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -104,9 +103,9 @@
                 android:ems="10"
                 android:inputType="none"
                 android:visibility="invisible"
-                app:layout_constraintEnd_toStartOf="@+id/hillfortVisited"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/hillfortVisited"
                 app:layout_constraintTop_toBottomOf="@+id/hillfortNotes" />
 
             <EditText
@@ -134,7 +133,7 @@
                 android:id="@+id/hillfortFavorite"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="15dp"
                 android:padding="10dp"
                 android:text="@string/checkbox_favorite"
                 android:visibility="invisible"
@@ -156,13 +155,12 @@
                 android:id="@+id/hillfortImageRecycler"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:scrollbars="none"
+                android:layout_marginTop="30dp"
                 android:visibility="visible"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -171,10 +169,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:hint="@string/hint_hillfortNotes"
-                android:inputType="textMultiLine"
                 android:maxLength="100"
-                android:maxLines="4"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:singleLine="false"
                 android:textAlignment="viewStart"
                 android:visibility="invisible"
