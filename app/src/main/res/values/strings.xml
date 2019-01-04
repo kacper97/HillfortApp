@@ -17,8 +17,10 @@
     <string name="change_hillfort_image">Change hillfort image</string>
     <string name="title_activity_maps">Map</string>
     <string name="checkbox_visited">Visited</string>
+    <string name="checkbox_favorite">Favorited</string>
     <string name="menu_settings_save">Save Settings</string>
     <string name="reg_cancel">Cancel Registration</string>
+    <string name="hillfort_search">Search</string>
 
     <!--BUTTONS. -->
     <string name="button_addImage">Add Image</string>
@@ -38,6 +40,7 @@
     <string name="toast_changed_cant_be_blank">Please enter valid credentials</string>
     <string name="toast_enterTitlePlease">Please enter a title for hillfort</string>
     <string name="hint_hillfortNotes">Additional Notes</string>
+
 
     <!-- HEADINGS. -->
     <string name="login_title">Log In</string>

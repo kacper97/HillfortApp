@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.image_hillfort.view.*
+import kotlinx.android.synthetic.main.specific_image_hillfort.view.*
 import org.wit.hillfort.R
 
 interface HillfortImageListener {

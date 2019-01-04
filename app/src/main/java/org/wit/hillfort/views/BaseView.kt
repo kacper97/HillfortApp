@@ -9,6 +9,7 @@ import org.wit.hillfort.views.settings.SettingsView
 import org.wit.hillfort.views.login.LoginView
 import org.wit.hillfort.views.register.RegisterView
 import org.wit.hillfort.models.HillfortModel
+import org.wit.hillfort.views.BasePresenter
 import org.wit.hillfort.views.editlocation.EditLocationView
 import org.wit.hillfort.views.hillfort.HillfortView
 import org.wit.hillfort.views.map.HillfortMapView

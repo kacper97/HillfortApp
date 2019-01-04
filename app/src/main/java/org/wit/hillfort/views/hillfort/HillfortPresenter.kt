@@ -1,6 +1,5 @@
 package org.wit.hillfort.views.hillfort
 
-
 import android.content.Intent
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

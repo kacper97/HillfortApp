@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:elevation="24dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:id="@+id/relativeLayout"
+        >
 
 
         <TextView
@@ -16,13 +20,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/hillfort_visited"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/hillfortTitle"/>
+            android:layout_below="@id/hillfortTitle"
+            app:layout_constraintStart_toStartOf="@+id/hillfortTitle"
+            app:layout_constraintTop_toBottomOf="@+id/hillfortTitle"
+            />
 
         <ImageView
             android:id="@+id/imageIcon"
@@ -32,7 +42,32 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="0dp"
             android:layout_below="@id/description"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_launcher_round"/>
 
-    </RelativeLayout>
+        <CheckBox
+            android:id="@+id/hillfort_visited"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:clickable="false"
+            android:text="@string/checkbox_visited"
+            app:layout_constraintStart_toStartOf="@+id/hillfort_favorited"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/hillfort_favorited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
+            android:clickable="false"
+            android:text="@string/checkbox_favorite"
+            app:layout_constraintBottom_toBottomOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/hillfort_visited"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
