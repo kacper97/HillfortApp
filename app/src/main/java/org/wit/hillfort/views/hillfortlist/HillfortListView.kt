@@ -23,7 +23,7 @@ class HillfortListView : BaseView(), HillfortListener {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_hillfort_list)
-    setSupportActionBar(toolbarappBarLayout2)
+    setSupportActionBar(toolbarMain)
 
     presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
 

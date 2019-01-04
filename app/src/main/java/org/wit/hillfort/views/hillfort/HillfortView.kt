@@ -51,13 +51,13 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
     }
 
     val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false)
-    hillfortImageRecycler.layoutManager = layoutManager
+    hillfort_images_list_view.layoutManager = layoutManager
     presenter.loadHillfortImages()
   }
 
   override fun showHillfort(hillfort: HillfortModel) {
     hillfortTitle.setText(hillfort.title)
-    hillfortDescription.setText(hillfort.description)
+    description.setText(hillfort.description)
     hillfortNotes.setText(hillfort.notes)
     checkbox_visited.setChecked(hillfort.visited)
     hillfortFavorite.setChecked(hillfort.favorite)
@@ -69,8 +69,8 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
   }
 
   override fun showHillfortImages (images: List<String>) {
-    hillfortImageRecycler.adapter = HillfortImageAdapter(images, this)
-    hillfortImageRecycler.adapter?.notifyDataSetChanged()
+    hillfort_images_list_view.adapter = HillfortImageAdapter(images, this)
+    hillfort_images_list_view.adapter?.notifyDataSetChanged()
   }
 
   override fun onHillfortImageClick(image: String) {
@@ -87,9 +87,9 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
 
       R.id.item_save -> {
         var title = hillfortTitle.text.toString()
-        var description = hillfortDescription.text.toString()
+        var description = description.text.toString()
         var notes = hillfortNotes.text.toString()
-        var visited = hillfortVisited.isChecked
+        var visited = checkbox_visited.isChecked
         var favorite = hillfortFavorite.isChecked
         var date = hillfortDate.text.toString()
         var rating = hillfortRating.rating
@@ -97,7 +97,7 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
         if (title.isEmpty()) {
           toast(R.string.toast_enterTitlePlease)
         } else {
-          presenter.doAddOrSave(title, description, notes, visited,favorite, date, rating)
+          presenter.doAddOrSave(title, description, visited,notes, date,favorite , rating)
         }
         setResult(AppCompatActivity.RESULT_OK)
         finish()
@@ -113,9 +113,9 @@ class HillfortView : BaseView(), AnkoLogger, HillfortImageListener {
   // Temporarily save hillfort in presenter hillfort object
   fun tempSave(){
     var title = hillfortTitle.text.toString()
-    var description = hillfortDescription.text.toString()
+    var description = description.text.toString()
     var notes = hillfortNotes.text.toString()
-    var visited = hillfortVisited.isChecked
+    var visited = checkbox_visited.isChecked
     var favorite = hillfortFavorite.isChecked()
     var date = hillfortDate.text.toString()
     var rating = hillfortRating.rating
