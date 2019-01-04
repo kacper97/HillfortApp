@@ -17,7 +17,7 @@ class SettingsView : BaseView() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_setting)
-    setSupportActionBar(toolbarSettings)
+    setSupportActionBar(item_settings_save)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     presenter = initPresenter (SettingsPresenter(this)) as SettingsPresenter
