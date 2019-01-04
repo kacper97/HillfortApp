@@ -19,7 +19,6 @@ class MainApp : Application(), AnkoLogger {
     firestore = HillfortFireStore(applicationContext)
     hillforts = firestore.hillforts
 
-
     info("Hillfort started")
 
     //

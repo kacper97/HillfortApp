@@ -50,7 +50,6 @@ class HillfortFireStore(val context: Context) : AnkoLogger {
         updateImage(hillfort)
       }
     }
-
     db.child("users").child(userId).child("hillforts").child(hillfort.fbId).setValue(hillfort)
   }
 
@@ -88,7 +87,6 @@ class HillfortFireStore(val context: Context) : AnkoLogger {
           }
         }
       }
-
     }
   }
 
